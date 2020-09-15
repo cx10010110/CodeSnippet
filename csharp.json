@@ -1,0 +1,424 @@
+{
+	// Place your snippets for csharp here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"console write": {
+		"prefix": "iConsoleWrite",
+		"body": "Console.Write(\"$0\");"
+	},
+	"console write12": {
+		"prefix": "iConsoleWrite12",
+		"body": "Console.Write($\"{$0}\");"
+	},
+	"console write2": {
+		"prefix": "iConsoleWrite2",
+		"body": "Console.Write($0);"
+	},
+	"console write3": {
+		"prefix": "iConsoleWrite3",
+		"body": "Console.Write(\"--------------------- $0 ---------------------\");"
+	},
+	"console write32": {
+		"prefix": "iConsoleWrite32",
+		"body": "Console.Write($\"--------------------- {$0} ---------------------\");"
+	},
+	"console write line": {
+		"prefix": "iConsoleWriteLine",
+		"body": "Console.WriteLine(\"$0\");"
+	},
+	"console write line12": {
+		"prefix": "iConsoleWriteLine12",
+		"body": "Console.WriteLine($\"{$0}\");"
+	},
+	"console write line2": {
+		"prefix": "iConsoleWriteLine2",
+		"body": "Console.WriteLine($0);"
+	},
+	"console write line3": {
+		"prefix": "iConsoleWriteLine3",
+		"body": "Console.WriteLine(\"--------------------- $0 ---------------------\");"
+	},
+	"console write line32": {
+		"prefix": "iConsoleWriteLine32",
+		"body": "Console.WriteLine($\"--------------------- {$0} ---------------------\");"
+	},
+	"log": {
+		"prefix": "iLog",
+		"body": "Debug.Log(\"$0\");"
+	},
+	"warning": {
+		"prefix": "iWarning",
+		"body": "Debug.LogWarning(\"$0\");"
+	},
+	"error": {
+		"prefix": "iError",
+		"body": "Debug.LogError(\"$0\");"
+	},
+	"log2": {
+		"prefix": "iLog2",
+		"body": "Debug.Log($0);"
+	},
+	"warning2": {
+		"prefix": "iWarning2",
+		"body": "Debug.LogWarning($0);"
+	},
+	"error2": {
+		"prefix": "iError2",
+		"body": "Debug.LogError($0);"
+	},
+	"log3": {
+		"prefix": "iLog3",
+		"body": "Debug.Log(\"--------------------- $0 ---------------------\");"
+	},
+	"log32": {
+		"prefix": "iLog32",
+		"body": "Debug.Log($\"--------------------- {$0} ---------------------\");"
+	},
+	"warning3": {
+		"prefix": "iWarning3",
+		"body": "Debug.LogWarning(\"--------------------- $0 ---------------------\");"
+	},
+	"warning32": {
+		"prefix": "iWarning32",
+		"body": "Debug.LogWarning($\"--------------------- {$0} ---------------------\");"
+	},
+	"error3": {
+		"prefix": "iError3",
+		"body": "Debug.LogError(\"--------------------- $0 ---------------------\");"
+	},
+	"error32": {
+		"prefix": "iError32",
+		"body": "Debug.LogError($\"--------------------- {$0} ---------------------\");"
+	},
+	"function": {
+		"prefix": "iFunction",
+		"body": [
+			"${1:void} $2($3)",
+			"{",
+			"    $0",
+			"}"
+		]
+	},
+	"function static": {
+		"prefix": "iFunctionStatic",
+		"body": [
+			"static ${1:void} $2($3)",
+			"{",
+			"    $0",
+			"}"
+		]
+	},
+	"function public": {
+		"prefix": "iFunctionPublic",
+		"body": [
+			"public ${1:void} $2($3)",
+			"{",
+			"    $0",
+			"}"
+		]
+	},
+	"function static public": {
+		"prefix": "iFunctionStaticPublic",
+		"body": [
+			"public static ${1:void} $2($3)",
+			"{",
+			"    $0",
+			"}"
+		]
+	},
+	"function virtual public": {
+		"prefix": "iFunctionVirtualPublic",
+		"body": [
+			"public virtual ${1:void} $2($3)",
+			"{",
+			"    $0",
+			"}"
+		]
+	},
+	"function override public": {
+		"prefix": "iFunctionOverridePublic",
+		"body": [
+			"public override ${1:void} $2($3)",
+			"{",
+			"    $0",
+			"}"
+		]
+	},
+	"function abstract public": {
+		"prefix": "iFunctionAbstractPublic",
+		"body": [
+			"public abstract ${1:void} $1($0);",
+		]
+	},
+	"function protected": {
+		"prefix": "iFunctionProtected",
+		"body": [
+			"protected ${1:void} $2($3)",
+			"{",
+			"    $0",
+			"}"
+		]
+	},
+	"function static protected": {
+		"prefix": "iFunctionStaticProtected",
+		"body": [
+			"protected static ${1:void} $2($3)",
+			"{",
+			"    $0",
+			"}"
+		]
+	},
+	"function virtual protected": {
+		"prefix": "iFunctionVirtualProtected",
+		"body": [
+			"protected virtual ${1:void} $2($3)",
+			"{",
+			"    $0",
+			"}"
+		]
+	},
+	"function override protected": {
+		"prefix": "iFunctionOverrideProtected",
+		"body": [
+			"protected override ${1:void} $2($3)",
+			"{",
+			"    $0",
+			"}"
+		]
+	},
+	"function abstract protected": {
+		"prefix": "iFunctionAbstractProtected",
+		"body": [
+			"protected abstract ${1:void} $2($0);",
+		]
+	},
+	"function private": {
+		"prefix": "iFunctionPrivate",
+		"body": [
+			"private ${1:void} $2($3)",
+			"{",
+			"    $0",
+			"}"
+		]
+	},
+	"function static private": {
+		"prefix": "iFunctionStaticPrivate",
+		"body": [
+			"private static ${1:void} $2($3)",
+			"{",
+			"    $0",
+			"}"
+		]
+	},
+	"functoin internal": {
+		"prefix": "iFunctionInternal",
+		"body": [
+			"internal ${1:void} $2($3)",
+			"{",
+			"    $0",
+			"}"
+		]
+	},
+	"functoin static internal": {
+		"prefix": "iFunctionStaticInternal",
+		"body": [
+			"internal static ${1:void} $2($3)",
+			"{",
+			"    $0",
+			"}"
+		]
+	},
+	"function virtual internal": {
+		"prefix": "iFunctionVirtualInternal",
+		"body": [
+			"internal virtual ${1:void} $2($3)",
+			"{",
+			"    $0",
+			"}"
+		]
+	},
+	"function override internal": {
+		"prefix": "iFunctionOverrideInternal",
+		"body": [
+			"internal override ${1:void} $2($3)",
+			"{",
+			"    $0",
+			"}"
+		]
+	},
+	"function abstract internal": {
+		"prefix": "iFunctionAbstractInternal",
+		"body": [
+			"internal abstract ${1:void} $2($0);",
+		]
+	},
+	"class": {
+		"prefix": "iClass",
+		"body": [
+			"/**",
+			" * $1",
+			" * @Author: chenxin",
+			" * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+			" */",
+			"namespace KTGMGemClient",
+			"{",
+			"    public class $TM_FILENAME_BASE",
+			"    {",
+			"        $0",
+			"    }",
+			"}"
+		]
+	},
+	"class1": {
+		"prefix": "iClass1",
+		"body": [
+			"using System;",
+			"",
+			"/**",
+			" * $1",
+			" * @Author: chenxin",
+			" * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+			" */",
+			"public class $TM_FILENAME_BASE",
+			"{",
+			"    $0",
+			"}",
+		]
+	},
+	"class script": {
+		"prefix": "iClassScript",
+		"body": [
+			"using System.Collections;",
+			"using System.Collections.Generic;",
+			"using UnityEngine;",
+			"",
+			"/**",
+			" * $1",
+			" * @Author: chenxin",
+			" * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+			" */",
+			"namespace KTGMGemClient",
+			"{",
+			"    public class $TM_FILENAME_BASE : MonoBehaviour",
+			"    {",
+			"        // Start is called before the first frame update",
+			"        private void Start()",
+			"        {",
+			"            $0",
+			"        }",
+			"",
+			"        // Update is called once per frame",
+			"        private void Update()",
+			"        {",
+			"            ",
+			"        }",
+			"    }",
+			"}"
+		]
+	},
+	"class extends": {
+		"prefix": "iClassExtends",
+		"body": [
+			"/**",
+			" * $1",
+			" * @Author: chenxin",
+			" * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+			" */",
+			"namespace KTGMGemClient",
+			"{",
+			"    public class $TM_FILENAME_BASE : $0",
+			"    {",
+			"        ",
+			"    }",
+			"}"
+		]
+	},
+	"class extends1": {
+		"prefix": "iClassExtends1",
+		"body": [
+			"using System;",
+			"",
+			"/**",
+			" * $1",
+			" * @Author: chenxin",
+			" * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+			" */",
+			"public class $TM_FILENAME_BASE : $0",
+			"{",
+			"    ",
+			"}"
+		]
+	},
+	"code": {
+		"prefix": "iCode",
+		"body": [
+			"/**",
+			" * $0",
+			" * @Author: chenxin",
+			" * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+			" */",
+		]
+	},
+	"enum": {
+		"prefix": "iEnum",
+		"body": [
+			"/**",
+			" * $1",
+			" * @Author: chenxin",
+			" * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+			" */",
+			"namespace KTGMGemClient",
+			"{",
+			"    public enum $TM_FILENAME_BASE",
+			"    {",
+			"        $0",
+			"    }",
+			"}"
+		]
+	},
+	"interface": {
+		"prefix": "iInterface",
+		"body": [
+			"/**",
+			" * $1",
+			" * @Author: chenxin",
+			" * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+			" */",
+			"namespace KTGMGemClient",
+			"{",
+			"    public interface $TM_FILENAME_BASE",
+			"    {",
+			"        $0",
+			"    }",
+			"}"
+		]
+	},
+	"constructor": {
+		"prefix": "iConstructor",
+		"body": [
+			"public $0()",
+			"{",
+			"    ",
+			"}"
+		]
+	},
+	"foreach": {
+		"prefix": "iForeach",
+		"body": [
+			"foreach ($1 $2 in $3)",
+			"{",
+			"    $0",
+			"}"
+		]
+	}
+}
