@@ -1,0 +1,645 @@
+{
+	// Place your snippets for typescript here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"log console1": {
+		"prefix": "iConsole1",
+		"body": "console.log(\"$0\");",
+		"description": "log console"
+	},
+	"log console2": {
+		"prefix": "iConsole2",
+		"body": "console.log($0);",
+		"description": "log console"
+	},
+	"log console3": {
+		"prefix": "iConsole3",
+		"body": "console.log(\"----------------- ${0} -----------------\");",
+		"description": "log console"
+	},
+	"log error1": {
+		"prefix": "iError1",
+		"body": "console.error(\"$0\");",
+		"description": "log error"
+	},
+	"log error2": {
+		"prefix": "iError2",
+		"body": "console.error($0);",
+		"description": "log error"
+	},
+	"log error3": {
+		"prefix": "iError3",
+		"body": "console.error(\"----------------- ${0} -----------------\");",
+		"description": "log error"
+	},
+	"class": {
+		"prefix": "iClass",
+		"body": [
+			"/**",
+			" * ${1}",
+			" */",
+			"class ${0} {",
+			"    constructor() {",
+			"    }",
+			"}"
+		]
+	},
+	"class extends": {
+		"prefix": "iClassExtends",
+		"body": [
+			"/**",
+			" * ${1}",
+			" */",
+			"class ${2} extends ${0} {",
+			"    constructor() {",
+			"        super();",
+			"    }",
+			"}"
+		]
+	},
+	"class implements": {
+		"prefix": "iClassImplements",
+		"body": [
+			"/**",
+			" * ${1}",
+			" */",
+			"class ${2} implements ${0} {",
+			"    constructor() {",
+			"        super();",
+			"    }",
+			"}"
+		]
+	},
+	"export class": {
+		"prefix": "iClassExport",
+		"body": [
+			"/**",
+			" * ${1}",
+			" */",
+			"export class ${0} {",
+			"    constructor() {",
+			"    }",
+			"}"
+		]
+	},
+	"export class extends": {
+		"prefix": "iClassExportExtends",
+		"body": [
+			"/**",
+			" * ${1}",
+			" */",
+			"export class ${2} extends ${0} {",
+			"    constructor() {",
+			"        super();",
+			"    }",
+			"}"
+		]
+	},
+	"export class implements": {
+		"prefix": "iClassExportImplements",
+		"body": [
+			"/**",
+			" * ${1}",
+			" */",
+			"exoprt class ${2} implements ${0} {",
+			"    constructor() {",
+			"        super();",
+			"    }",
+			"}"
+		]
+	},
+	"class singleton": {
+		"prefix": "iSingleton",
+		"body": [
+			"/**",
+			" * ${1}",
+			" */",
+			"class ${0} {",
+			"    private static _ins: ${0} = null;",
+			"    public static get ins(): ${0} {",
+			"        if (!this._ins) this._ins = new ${0}();",
+			"        return this._ins;",
+			"    }",
+			"}"
+		]
+	},
+	"class singleton extends": {
+		"prefix": "iSingleton",
+		"body": [
+			"/**",
+			" * ${1}",
+			" */",
+			"class ${2} extends ${0} {",
+			"    private static _ins: ${2} = null;",
+			"    public static get ins(): ${2} {",
+			"        if (!this._ins) this._ins = new ${2}();",
+			"        return this._ins;",
+			"    }",
+			"}"
+		]
+	},
+	"export class singleton": {
+		"prefix": "iSingletonExport",
+		"body": [
+			"/**",
+			" * ${1}",
+			" */",
+			"export class ${0} {",
+			"    private static _ins: ${0} = null;",
+			"    public static get ins(): ${0} {",
+			"        if (!this._ins) this._ins = new ${0}();",
+			"        return this._ins;",
+			"    }",
+			"}"
+		]
+	},
+	"export class singleton extends": {
+		"prefix": "iSingletonExportExtends",
+		"body": [
+			"/**",
+			" * ${1}",
+			" */",
+			"class ${2} extends ${0} {",
+			"    private static _ins: ${2} = null;",
+			"    public static get ins(): ${2} {",
+			"        if (!this._ins) this._ins = new ${2}();",
+			"        return this._ins;",
+			"    }",
+			"}"
+		]
+	},
+	"comment function": {
+		"prefix": "iCommentFunction",
+		"body": [
+			"/** ${0} */",
+		]
+	},
+	"comment function1": {
+		"prefix": "iCommentFunction1",
+		"body": [
+			"// ${0}",
+		]
+	},
+	"comment class": {
+		"prefix": "iCommentFunction",
+		"body": [
+			"/**",
+			" * ${0}",
+			" */",
+		]
+	},
+	"get private": {
+		"prefix": "iGetPrivate",
+		"body": [
+			"private get ${1}(): ${2} {",
+			"    return ${0};",
+			"}",
+		]
+	},
+	"set private": {
+		"prefix": "iSetPrivate",
+		"body": [
+			"private set ${1}(val: ${0}) {",
+			"}",
+		]
+	},
+	"get protected": {
+		"prefix": "iGetProtected",
+		"body": [
+			"protected get ${1}(): ${2} {",
+			"    return ${0};",
+			"}",
+		]
+	},
+	"set protected": {
+		"prefix": "iSetProtected",
+		"body": [
+			"protected set ${1}(val: ${0}) {",
+			"}",
+		]
+	},
+	"get public": {
+		"prefix": "iGetPublic",
+		"body": [
+			"public get ${1}(): ${0} {",
+			"    return ${3};",
+			"}",
+		]
+	},
+	"set public": {
+		"prefix": "iSetPublic",
+		"body": [
+			"public set ${1}(val: ${0}) {",
+			"}",
+		]
+	},
+	"get set private": {
+		"prefix": "iGetSetPrivate",
+		"body": [
+			"private _${1}: ${0};",
+			"private get ${1}(): ${0} {",
+			"    return this._${1};",
+			"}",
+			"",
+			"private set ${1}(val: ${0}) {",
+			"    this._${1} = val;",
+			"}"
+		]
+	},
+	"get set protected": {
+		"prefix": "iGetSetProtected",
+		"body": [
+			"private _${1}: ${0};",
+			"protected get ${1}(): ${0} {",
+			"    return this._${1};",
+			"}",
+			"",
+			"protected set ${1}(val: ${0}) {",
+			"    this._${1} = val;",
+			"}"
+		]
+	},
+	"get set public": {
+		"prefix": "iGetSetPublic",
+		"body": [
+			"private _${1}: ${0};",
+			"public get ${1}(): ${0} {",
+			"    return this._${1};",
+			"}",
+			"",
+			"public set ${1}(val: ${0}) {",
+			"    this._${1} = val;",
+			"}"
+		]
+	},
+	"function": {
+		"prefix": "iFunction",
+		"body": [
+			"function ${1}() {",
+			"    ${0}",
+			"}",
+		]
+	},
+	"function private": {
+		"prefix": "iFunctionPrivate",
+		"body": [
+			"private ${1}(): ${2} {",
+			"    ${0}",
+			"}",
+		]
+	},
+	"function static private": {
+		"prefix": "iFunctionStaticPrivate",
+		"body": [
+			"private static ${1}(): ${2} {",
+			"    ${0}",
+			"}",
+		]
+	},
+	"function protected": {
+		"prefix": "iFunctionProtected",
+		"body": [
+			"protected ${1}(): ${2} {",
+			"    ${0}",
+			"}",
+		]
+	},
+	"function static protected": {
+		"prefix": "iFunctionStaticProtected",
+		"body": [
+			"protected static ${1}(): ${2} {",
+			"    ${0}",
+			"}",
+		]
+	},
+	"function public": {
+		"prefix": "iFunctionPublic",
+		"body": [
+			"public ${1}(): ${2} {",
+			"    ${0}",
+			"}",
+		]
+	},
+	"function static public": {
+		"prefix": "iFunctionStaticPublic",
+		"body": [
+			"public static ${1}(): ${2} {",
+			"    ${0}",
+			"}",
+		]
+	},
+	"function async private": {
+		"prefix": "iFunctionAsyncPrivate",
+		"body": [
+			"private async ${1}(): Promise<${2}> {",
+			"    ${0}",
+			"}",
+		]
+	},
+	"function static async private": {
+		"prefix": "iFunctionAsyncPrivate",
+		"body": [
+			"private static async ${1}(): Promise<${2}> {",
+			"    ${0}",
+			"}",
+		]
+	},
+	"function async protected": {
+		"prefix": "iFunctionAsyncProtected",
+		"body": [
+			"protected async ${1}(): Promise<${2}> {",
+			"    ${0}",
+			"}",
+		]
+	},
+	"function static async protected": {
+		"prefix": "iFunctionAsyncProtected",
+		"body": [
+			"protected static async ${1}(): Promise<${2}> {",
+			"    ${0}",
+			"}",
+		]
+	},
+	"function async public": {
+		"prefix": "iFunctionAsyncPublic",
+		"body": [
+			"public async ${1}(): Promise<${2}> {",
+			"    ${0}",
+			"}",
+		]
+	},
+	"function static async public": {
+		"prefix": "iFunctionAsyncPublic",
+		"body": [
+			"public static async ${1}(): Promise<${2}> {",
+			"    ${0}",
+			"}",
+		]
+	},
+	"constructor": {
+		"prefix": "iConstructor",
+		"body": [
+			"constructor() {",
+			"    ${0}",
+			"}"
+		]
+	},
+	"constructor extends": {
+		"prefix": "iConstructorExtends",
+		"body": [
+			"constructor() {",
+			"    super();${0}",
+			"}"
+		]
+	},
+	"stage": {
+		"prefix": "iStage",
+		"body": "Laya.stage${0}"
+	},
+	"stage dot": {
+		"prefix": "iStageDot",
+		"body": "Laya.stage.${0}"
+	},
+	"timer": {
+		"prefix": "iTimer",
+		"body": "Laya.timer.${0}"
+	},
+	"tweenTo": {
+		"prefix": "iTweenTo",
+		"body": "Laya.Tween.to(${0})"
+	},
+	"tweenFrom": {
+		"prefix": "iTweenFrom",
+		"body": "Laya.Tween.from(${0})"
+	},
+	"load": {
+		"prefix": "iLoad",
+		"body": "Laya.loader.load(${0})"
+	},
+	"load1": {
+		"prefix": "iLoad1",
+		"body": "Laya.Loader${0}"
+	},
+	"browser": {
+		"prefix": "iBrowser",
+		"body": "Laya.Browser.${0}"
+	},
+	"browserCW": {
+		"prefix": "iBrowserClientWidth",
+		"body": "Laya.Browser.clientWidth${0}"
+	},
+	"browserCH": {
+		"prefix": "iBrowserClientHeight",
+		"body": "Laya.Browser.clientHeight${0}"
+	},
+	"event": {
+		"prefix": "iEvent",
+		"body": "Laya.Event${0}"
+	},
+	"image": {
+		"prefix": "iImage",
+		"body": "Laya.Image${0}"
+	},
+	"label": {
+		"prefix": "iLabel",
+		"body": "Laya.Label${0}"
+	},
+	"text": {
+		"prefix": "iText",
+		"body": "Laya.Text${0}"
+	},
+	"animation": {
+		"prefix": "iAnimation",
+		"body": "Laya.Animation${0}"
+	},
+	"htmlDivElement": {
+		"prefix": "iHtmlDivElement",
+		"body": "Laya.HTMLDivElement${0}"
+	},
+	"sprite": {
+		"prefix": "iSprite",
+		"body": "Laya.Sprite${0}"
+	},
+	"button": {
+		"prefix": "iButton",
+		"body": "Laya.Button${0}"
+	},
+	"checkBox": {
+		"prefix": "iCheckBox",
+		"body": "Laya.CheckBox${0}"
+	},
+	"box": {
+		"prefix": "iBox",
+		"body": "Laya.Box${0}"
+	},
+	"clip": {
+		"prefix": "iClip",
+		"body": "Laya.Clip${0}"
+	},
+	"dialog": {
+		"prefix": "iDialog",
+		"body": "Laya.Dialog${0}"
+	},
+	"fontClip": {
+		"prefix": "iFontClip",
+		"body": "Laya.FontClip${0}"
+	},
+	"hBox": {
+		"prefix": "iHBox",
+		"body": "Laya.HBox${0}"
+	},
+	"vBox": {
+		"prefix": "iVBox",
+		"body": "Laya.VBox${0}"
+	},
+	"hScrollBar": {
+		"prefix": "iHScrollBar",
+		"body": "Laya.HScrollBar${0}"
+	},
+	"vScrollBar": {
+		"prefix": "iVScrollBar",
+		"body": "Laya.VScrollBar${0}"
+	},
+	"list": {
+		"prefix": "iList",
+		"body": "Laya.List${0}"
+	},
+	"panel": {
+		"prefix": "iPanel",
+		"body": "Laya.Panel${0}"
+	},
+	"progressBar": {
+		"prefix": "iProgressBar",
+		"body": "Laya.ProgressBar${0}"
+	},
+	"radio": {
+		"prefix": "iRadio",
+		"body": "Laya.Radio${0}"
+	},
+	"tab": {
+		"prefix": "iTab",
+		"body": "Laya.Tab${0}"
+	},
+	"textArea": {
+		"prefix": "iTextArea",
+		"body": "Laya.TextArea${0}"
+	},
+	"viewStack": {
+		"prefix": "iViewStack",
+		"body": "Laya.ViewStack${0}"
+	},
+	"textInput": {
+		"prefix": "iTextInput",
+		"body": "Laya.TextInput${0}"
+	},
+	"tree": {
+		"prefix": "iTree",
+		"body": "Laya.Tree${0}"
+	},
+	"layaInit": {
+		"prefix": "iInit",
+		"body": "Laya.init(${0});"
+	},
+	"webGL": {
+		"prefix": "iWebGL",
+		"body": "Laya.WebGL${0}"
+	},
+	"handler": {
+		"prefix": "iHandler",
+		"body": "Laya.Handler${0}"
+	},
+	"handler create": {
+		"prefix": "iHandlerCreate",
+		"body": "Laya.Handler.create(this, ${0})"
+	},
+	"private static": {
+		"prefix": "iPrivateStatic",
+		"body": "private static ${0}"
+	},
+	"protected static": {
+		"prefix": "iProtectedStatic",
+		"body": "protected static ${0}"
+	},
+	"public static": {
+		"prefix": "iPublicStatic",
+		"body": "public static ${0}"
+	},
+	"Stage": {
+		"prefix": "iStage1",
+		"body": "Laya.Stage${0}"
+	},
+	"ease": {
+		"prefix": "iEase",
+		"body": "Laya.Ease.${0}"
+	},
+	"point": {
+		"prefix": "iPoint",
+		"body": "Laya.Point"
+	},
+	"rectangle": {
+		"prefix": "iRectangle",
+		"body": "Laya.Rectangle"
+	},
+	"interface": {
+		"prefix": "iInterface",
+		"body": [
+			"/**",
+			" * ${1}",
+			" */",
+			"interface ${2} {",
+			"    ${0}",
+			"}"
+		]
+	},
+	"enum": {
+		"prefix": "iEnum",
+		"body": [
+			"/**",
+			" * ${1}",
+			" */",
+			"const enum ${2} {",
+			"    ${0}",
+			"}"
+		]
+	},
+	"enum export": {
+		"prefix": "iEnumExport",
+		"body": [
+			"/**",
+			" * ${1}",
+			" */",
+			"export const enum ${2} {",
+			"    ${0}",
+			"}"
+		]
+	},
+	"interface export": {
+		"prefix": "iInterfaceExport",
+		"body": [
+			"/**",
+			" * ${1}",
+			" */",
+			"export interface ${2} {",
+			"    ${0}",
+			"}"
+		]
+	},
+	"node": {
+		"prefix": "iNode",
+		"body": "Laya.Node${0}"
+	},
+	"pool": {
+		"prefix": "iPool",
+		"body": "Laya.Pool${0}"
+	}
+}
