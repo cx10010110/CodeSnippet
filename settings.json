@@ -1,0 +1,25 @@
+{
+    "files.autoSave": "afterDelay",
+    "editor.fontFamily": "CamingoCode,Consolas, 'Courier New', monospace",
+    "background.useDefault": false,
+    "background.useFront": false,
+    "background.customImages": [
+        "file:///E:/DesktopPicture/37.jpg"
+    ],
+    "background.style": {
+        "content": "''",
+        "pointer-events": "none",
+        "position": "absolute",
+        "z-index": "99999",
+        "width": "100%",
+        "height": "100%",
+        "background-position": "100% 100%",
+        "background-repeat": "no-repeat",
+        "background-size": "cover",
+        "opacity": 0.18
+    },
+    "editor.renderWhitespace": "all",
+    "editor.detectIndentation": false,
+    "extensions.autoUpdate": false,
+    "security.workspace.trust.untrustedFiles": "open",
+}
