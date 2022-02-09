@@ -15,42 +15,87 @@
     "log console1": {
         "prefix": "iConsole1",
         "body": "console.log(\"$0\");",
-        "description": "log console"
+    },
+    "log console12": {
+        "prefix": "iConsole12",
+        "body": "console.log(`${$0}`);"
     },
     "log console2": {
         "prefix": "iConsole2",
         "body": "console.log($0);",
-        "description": "log console"
     },
     "log console3": {
         "prefix": "iConsole3",
-        "body": "console.log(\"----------------- ${0} -----------------\");",
-        "description": "log console"
+        "body": "console.log(\"--------- ${0} ---------\");",
+    },
+    "log console32": {
+        "prefix": "iConsole32",
+        "body": "console.log(`--------- ${${0}} ---------`);",
+    },
+    "log warn1": {
+        "prefix": "iWarn1",
+        "body": "console.warn(\"$0\");",
+    },
+    "log warn12": {
+        "prefix": "iWarn12",
+        "body": "console.warn(`${$0}`);",
+    },
+    "log warn2": {
+        "prefix": "iWarn2",
+        "body": "console.warn($0);",
+    },
+    "log warn3": {
+        "prefix": "iWarn3",
+        "body": "console.warn(\"--------- ${0} ---------\");",
+    },
+    "log warn32": {
+        "prefix": "iWarn32",
+        "body": "console.warn(`--------- ${${0}} ---------`);",
     },
     "log error1": {
         "prefix": "iError1",
         "body": "console.error(\"$0\");",
-        "description": "log error"
+    },
+    "log error12": {
+        "prefix": "iError12",
+        "body": "console.error(`${$0}`);",
     },
     "log error2": {
         "prefix": "iError2",
         "body": "console.error($0);",
-        "description": "log error"
     },
     "log error3": {
         "prefix": "iError3",
-        "body": "console.error(\"----------------- ${0} -----------------\");",
-        "description": "log error"
+        "body": "console.error(\"--------- ${0} ---------\");",
+    },
+    "log error32": {
+        "prefix": "iError32",
+        "body": "console.error(`--------- ${${0}} ---------`);",
     },
     "class": {
         "prefix": "iClass",
         "body": [
             "/**",
-            " * ${1}",
+            " * $0",
+            " * @Author: chenxin",
+            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
             " */",
-            "class ${0} {",
+            "class $TM_FILENAME_BASE {",
             "    constructor() {",
             "    }",
+            "}"
+        ]
+    },
+    "interface": {
+        "prefix": "iInterface",
+        "body": [
+            "/**",
+            " * $1",
+            " * @Author: chenxin",
+            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+            " */",
+            "interface $TM_FILENAME_BASE {",
+            "    ${0}",
             "}"
         ]
     },
@@ -58,22 +103,11 @@
         "prefix": "iClassExtends",
         "body": [
             "/**",
-            " * ${1}",
+            " * $0",
+            " * @Author: chenxin",
+            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
             " */",
-            "class ${2} extends ${0} {",
-            "    constructor() {",
-            "        super();",
-            "    }",
-            "}"
-        ]
-    },
-    "class implements": {
-        "prefix": "iClassImplements",
-        "body": [
-            "/**",
-            " * ${1}",
-            " */",
-            "class ${2} implements ${0} {",
+            "class $TM_FILENAME_BASE extends ${1} {",
             "    constructor() {",
             "        super();",
             "    }",
@@ -84,11 +118,53 @@
         "prefix": "iClassExport",
         "body": [
             "/**",
-            " * ${1}",
+            " * $0",
+            " * @Author: chenxin",
+            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
             " */",
-            "export class ${0} {",
+            "export class $TM_FILENAME_BASE {",
             "    constructor() {",
             "    }",
+            "}"
+        ]
+    },
+    "export interface": {
+        "prefix": "iInterfaceExport",
+        "body": [
+            "/**",
+            " * $1",
+            " * @Author: chenxin",
+            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+            " */",
+            "export interface $TM_FILENAME_BASE {",
+            "    ${0}",
+            "}"
+        ]
+    },
+    "export default class": {
+        "prefix": "iClassExportDefault",
+        "body": [
+            "/**",
+            " * $0",
+            " * @Author: chenxin",
+            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+            " */",
+            "export default class $TM_FILENAME_BASE {",
+            "    constructor() {",
+            "    }",
+            "}"
+        ]
+    },
+    "export default interface": {
+        "prefix": "iInterfaceExportDefault",
+        "body": [
+            "/**",
+            " * $1",
+            " * @Author: chenxin",
+            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+            " */",
+            "export default interface $TM_FILENAME_BASE {",
+            "    ${0}",
             "}"
         ]
     },
@@ -96,22 +172,26 @@
         "prefix": "iClassExportExtends",
         "body": [
             "/**",
-            " * ${1}",
+            " * $0",
+            " * @Author: chenxin",
+            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
             " */",
-            "export class ${2} extends ${0} {",
+            "export class $TM_FILENAME_BASE extends ${1} {",
             "    constructor() {",
             "        super();",
             "    }",
             "}"
         ]
     },
-    "export class implements": {
-        "prefix": "iClassExportImplements",
+    "export default class extends": {
+        "prefix": "iClassExportDefaultExtends",
         "body": [
             "/**",
-            " * ${1}",
+            " * $1",
+            " * @Author: chenxin",
+            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
             " */",
-            "exoprt class ${2} implements ${0} {",
+            "export default class $TM_FILENAME_BASE extends ${0} {",
             "    constructor() {",
             "        super();",
             "    }",
@@ -122,27 +202,41 @@
         "prefix": "iSingleton",
         "body": [
             "/**",
-            " * ${1}",
+            " * $0",
+            " * @Author: chenxin",
+            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
             " */",
-            "class ${0} {",
-            "    private static _ins: ${0} = null;",
-            "    public static get ins(): ${0} {",
-            "        if (!this._ins) this._ins = new ${0}();",
+            "class $TM_FILENAME_BASE {",
+            "    private static _ins: $TM_FILENAME_BASE = null;",
+            "    public static get ins(): $TM_FILENAME_BASE {",
+            "        if (!this._ins) this._ins = new $TM_FILENAME_BASE();",
             "        return this._ins;",
             "    }",
             "}"
         ]
     },
+    "class singleton2": {
+        "prefix": "iSingleton2",
+        "body": [
+            "private static _ins: ${0} = null;",
+            "public static get ins(): ${0} {",
+            "    if (!this._ins) this._ins = new ${0}();",
+            "    return this._ins;",
+            "}",
+        ]
+    },
     "class singleton extends": {
-        "prefix": "iSingleton",
+        "prefix": "iSingletonExtends",
         "body": [
             "/**",
-            " * ${1}",
+            " * $0",
+            " * @Author: chenxin",
+            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
             " */",
-            "class ${2} extends ${0} {",
-            "    private static _ins: ${2} = null;",
-            "    public static get ins(): ${2} {",
-            "        if (!this._ins) this._ins = new ${2}();",
+            "class $TM_FILENAME_BASE extends ${1} {",
+            "    private static _ins: $TM_FILENAME_BASE = null;",
+            "    public static get ins(): $TM_FILENAME_BASE {",
+            "        if (!this._ins) this._ins = new $TM_FILENAME_BASE();",
             "        return this._ins;",
             "    }",
             "}"
@@ -152,12 +246,31 @@
         "prefix": "iSingletonExport",
         "body": [
             "/**",
-            " * ${1}",
+            " * $0",
+            " * @Author: chenxin",
+            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
             " */",
-            "export class ${0} {",
-            "    private static _ins: ${0} = null;",
-            "    public static get ins(): ${0} {",
-            "        if (!this._ins) this._ins = new ${0}();",
+            "export class $TM_FILENAME_BASE {",
+            "    private static _ins: $TM_FILENAME_BASE = null;",
+            "    public static get ins(): $TM_FILENAME_BASE {",
+            "        if (!this._ins) this._ins = new $TM_FILENAME_BASE();",
+            "        return this._ins;",
+            "    }",
+            "}"
+        ]
+    },
+    "export default class singleton": {
+        "prefix": "iSingletonExportDefault",
+        "body": [
+            "/**",
+            " * $0",
+            " * @Author: chenxin",
+            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+            " */",
+            "export default class $TM_FILENAME_BASE {",
+            "    private static _ins: $TM_FILENAME_BASE = null;",
+            "    public static get ins(): $TM_FILENAME_BASE {",
+            "        if (!this._ins) this._ins = new $TM_FILENAME_BASE();",
             "        return this._ins;",
             "    }",
             "}"
@@ -167,12 +280,31 @@
         "prefix": "iSingletonExportExtends",
         "body": [
             "/**",
-            " * ${1}",
+            " * $0",
+            " * @Author: chenxin",
+            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
             " */",
-            "class ${2} extends ${0} {",
-            "    private static _ins: ${2} = null;",
-            "    public static get ins(): ${2} {",
-            "        if (!this._ins) this._ins = new ${2}();",
+            "export class $TM_FILENAME_BASE extends ${1} {",
+            "    private static _ins: $TM_FILENAME_BASE = null;",
+            "    public static get ins(): $TM_FILENAME_BASE {",
+            "        if (!this._ins) this._ins = new $TM_FILENAME_BASE();",
+            "        return this._ins;",
+            "    }",
+            "}"
+        ]
+    },
+    "export class default singleton extends": {
+        "prefix": "iSingletonExportDefaultExtends",
+        "body": [
+            "/**",
+            " * $0",
+            " * @Author: chenxin",
+            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+            " */",
+            "export default class $TM_FILENAME_BASE extends ${1} {",
+            "    private static _ins: $TM_FILENAME_BASE = null;",
+            "    public static get ins(): $TM_FILENAME_BASE {",
+            "        if (!this._ins) this._ins = new $TM_FILENAME_BASE();",
             "        return this._ins;",
             "    }",
             "}"
@@ -182,6 +314,160 @@
         "prefix": "iCommentFunction",
         "body": [
             "/** ${0} */",
+        ]
+    },
+    "animation": {
+        "prefix": "iAnimation",
+        "body": "Laya.Animation${0}"
+    },
+    "HTMLDivElement": {
+        "prefix": "iHTMLDivElement",
+        "body": "Laya.HTMLDivElement${0}"
+    },
+    "sprite": {
+        "prefix": "iSprite",
+        "body": "Laya.Sprite${0}"
+    },
+    "text": {
+        "prefix": "iText",
+        "body": "Laya.Text${0}"
+    },
+    "blurFilterSetter": {
+        "prefix": "iBlurFilterSetter",
+        "body": "Laya.BlurFilterSetter${0}"
+    },
+    "colorFilterSetter": {
+        "prefix": "iColorFilterSetter",
+        "body": "Laya.ColorFilterSetter${0}"
+    },
+    "glowFilterSetter": {
+        "prefix": "iGlowFilterSetter",
+        "body": "Laya.GlowFilterSetter${0}"
+    },
+    "button": {
+        "prefix": "iButton",
+        "body": "Laya.Button${0}"
+    },
+    "checkBox": {
+        "prefix": "iCheckBox",
+        "body": "Laya.CheckBox${0}"
+    },
+    "clip": {
+        "prefix": "iClip",
+        "body": "Laya.Clip${0}"
+    },
+    "colorPicker": {
+        "prefix": "iColorPicker",
+        "body": "Laya.ColorPicker${0}"
+    },
+    "comboBox": {
+        "prefix": "iComboBox",
+        "body": "Laya.ComboBox${0}"
+    },
+    "hSlider": {
+        "prefix": "iHSlider",
+        "body": "Laya.HSlider${0}"
+    },
+    "radioGroup": {
+        "prefix": "iRadioGroup",
+        "body": "Laya.RadioGroup${0}"
+    },
+    "tween": {
+        "prefix": "iTween",
+        "body": "Laya.Tween${0}"
+    },
+    "tweenClear": {
+        "prefix": "iTweenClear",
+        "body": "Laya.Tween.Clear(${0});"
+    },
+    "tweenClearAll": {
+        "prefix": "iTweenClearAll",
+        "body": "Laya.Tween.ClearAll(${0});"
+    },
+    "timer1": {
+        "prefix": "iTimer1",
+        "body": "Laya.Timer${0}",
+    },
+    "timerOnce": {
+        "prefix": "iTimerOnce",
+        "body": "Laya.timer.once(${0});"
+    },
+    "timerLoop": {
+        "prefix": "iTimerLoop",
+        "body": "Laya.timer.loop(${0});"
+    },
+    "timerFrameLoop": {
+        "prefix": "iTimerFrameLoop",
+        "body": "Laya.timer.frameLoop(${0});"
+    },
+    "timerFrameOnce": {
+        "prefix": "iTimerFrameOnce",
+        "body": "Laya.timer.frameOnce(${0});"
+    },
+    "new handler": {
+        "prefix": "iNewHandler",
+        "body": "new Laya.handler(${0})"
+    },
+    "stageWidth": {
+        "prefix": "iStageWidth",
+        "body": "Laya.Stage.Width${0}"
+    },
+    "stageHeight": {
+        "prefix": "iStageHeight",
+        "body": "Laya.Stage.Height${0}"
+    },
+    "loader": {
+        "prefix": "iLoader",
+        "body": "Laya.Loader${0}"
+    },
+    "scene": {
+        "prefix": "iScene",
+        "body": "Laya.Scene${0}"
+    },
+    "scene open": {
+        "prefix": "iSceneOpen",
+        "body": "Laya.Scene.open(${0});"
+    },
+    "scene close": {
+        "prefix": "iSceneClose",
+        "body": "Laya.Scene.close(${0});"
+    },
+    "view": {
+        "prefix": "iView",
+        "body": "Laya.View${0}"
+    },
+    "nameEvent": {
+        "prefix": "iNameEvent",
+        "body": "${1} = \"${1}\",${0}"
+    },
+    "class implements": {
+        "prefix": "iClassImplements",
+        "body": [
+            "/**",
+            " * $1",
+            " * @Author: chenxin",
+            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+            " */",
+            "class ${2} implements ${0} {",
+            "    constructor() {",
+            "        super();",
+            "    }",
+            "}"
+        ]
+    },
+    "export class implements": {
+        "prefix": "iClassExportImplements",
+        "body": [
+            "/**",
+            " * $1",
+            " * @Author: chenxin",
+            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+            " */",
+            "exoprt class ${2} implements ${0} {",
+            "    constructor() {",
+            "        super();",
+            "    }",
+            "}"
         ]
     },
     "comment function1": {
@@ -293,7 +579,7 @@
     "function private": {
         "prefix": "iFunctionPrivate",
         "body": [
-            "private ${1}(): ${2} {",
+            "private ${1}($2): ${3:void} {",
             "    ${0}",
             "}",
         ]
@@ -301,7 +587,7 @@
     "function static private": {
         "prefix": "iFunctionStaticPrivate",
         "body": [
-            "private static ${1}(): ${2} {",
+            "private static ${1}($2): ${3:void} {",
             "    ${0}",
             "}",
         ]
@@ -309,7 +595,7 @@
     "function protected": {
         "prefix": "iFunctionProtected",
         "body": [
-            "protected ${1}(): ${2} {",
+            "protected ${1}($2): ${3:void} {",
             "    ${0}",
             "}",
         ]
@@ -317,7 +603,7 @@
     "function static protected": {
         "prefix": "iFunctionStaticProtected",
         "body": [
-            "protected static ${1}(): ${2} {",
+            "protected static ${1}($2): ${3:void} {",
             "    ${0}",
             "}",
         ]
@@ -325,7 +611,7 @@
     "function public": {
         "prefix": "iFunctionPublic",
         "body": [
-            "public ${1}(): ${2} {",
+            "public ${1}($2): ${3:void} {",
             "    ${0}",
             "}",
         ]
@@ -333,7 +619,7 @@
     "function static public": {
         "prefix": "iFunctionStaticPublic",
         "body": [
-            "public static ${1}(): ${2} {",
+            "public static ${1}($2): ${3:void} {",
             "    ${0}",
             "}",
         ]
@@ -341,7 +627,7 @@
     "function async private": {
         "prefix": "iFunctionAsyncPrivate",
         "body": [
-            "private async ${1}(): Promise<${2}> {",
+            "private async ${1}($2): Promise<${3:void}> {",
             "    ${0}",
             "}",
         ]
@@ -349,7 +635,7 @@
     "function static async private": {
         "prefix": "iFunctionAsyncPrivate",
         "body": [
-            "private static async ${1}(): Promise<${2}> {",
+            "private static async ${1}($2): Promise<${3:void}> {",
             "    ${0}",
             "}",
         ]
@@ -357,7 +643,7 @@
     "function async protected": {
         "prefix": "iFunctionAsyncProtected",
         "body": [
-            "protected async ${1}(): Promise<${2}> {",
+            "protected async ${1}($2): Promise<${3:void}> {",
             "    ${0}",
             "}",
         ]
@@ -365,7 +651,7 @@
     "function static async protected": {
         "prefix": "iFunctionAsyncProtected",
         "body": [
-            "protected static async ${1}(): Promise<${2}> {",
+            "protected static async ${1}($2): Promise<${3:void}> {",
             "    ${0}",
             "}",
         ]
@@ -373,7 +659,7 @@
     "function async public": {
         "prefix": "iFunctionAsyncPublic",
         "body": [
-            "public async ${1}(): Promise<${2}> {",
+            "public async ${1}($2): Promise<${3:void}> {",
             "    ${0}",
             "}",
         ]
@@ -381,7 +667,7 @@
     "function static async public": {
         "prefix": "iFunctionAsyncPublic",
         "body": [
-            "public static async ${1}(): Promise<${2}> {",
+            "public static async ${1}($2): Promise<${3:void}> {",
             "    ${0}",
             "}",
         ]
@@ -405,6 +691,14 @@
     "stage": {
         "prefix": "iStage",
         "body": "Laya.stage${0}"
+    },
+    "camera": {
+        "prefix": "iCamera",
+        "body": "Laya.Camera${0}"
+    },
+    "scene3D": {
+        "prefix": "iScene3D",
+        "body": "Laya.Scene3D${0}"
     },
     "stage dot": {
         "prefix": "iStageDot",
@@ -454,37 +748,17 @@
         "prefix": "iLabel",
         "body": "Laya.Label${0}"
     },
-    "text": {
-        "prefix": "iText",
-        "body": "Laya.Text${0}"
-    },
-    "animation": {
-        "prefix": "iAnimation",
-        "body": "Laya.Animation${0}"
-    },
     "htmlDivElement": {
         "prefix": "iHtmlDivElement",
         "body": "Laya.HTMLDivElement${0}"
     },
-    "sprite": {
-        "prefix": "iSprite",
-        "body": "Laya.Sprite${0}"
-    },
-    "button": {
-        "prefix": "iButton",
-        "body": "Laya.Button${0}"
-    },
-    "checkBox": {
-        "prefix": "iCheckBox",
-        "body": "Laya.CheckBox${0}"
+    "sprite3D": {
+        "prefix": "iSprite3D",
+        "body": "Laya.Sprite3D${0}"
     },
     "box": {
         "prefix": "iBox",
         "body": "Laya.Box${0}"
-    },
-    "clip": {
-        "prefix": "iClip",
-        "body": "Laya.Clip${0}"
     },
     "dialog": {
         "prefix": "iDialog",
@@ -590,17 +864,6 @@
         "prefix": "iRectangle",
         "body": "Laya.Rectangle"
     },
-    "interface": {
-        "prefix": "iInterface",
-        "body": [
-            "/**",
-            " * ${1}",
-            " */",
-            "interface ${2} {",
-            "    ${0}",
-            "}"
-        ]
-    },
     "enum": {
         "prefix": "iEnum",
         "body": [
@@ -641,5 +904,35 @@
     "pool": {
         "prefix": "iPool",
         "body": "Laya.Pool${0}"
-    }
+    },
+    "vector2": {
+        "prefix": "iVector2",
+        "body": "Laya.Vector2${0}"
+    },
+    "vector3": {
+        "prefix": "iVector3",
+        "body": "Laya.Vector3${0}"
+    },
+    "vector4": {
+        "prefix": "iVector4",
+        "body": "Laya.Vector4${0}"
+    },
+    "cameraClearFlags": {
+        "prefix": "iCameraClearFlags",
+        "body": "Laya.CameraClearFlags${0}"
+    },
+    "baseCamera": {
+        "prefix": "iBaseCamera",
+        "body": "Laya.BaseCamera{0}"
+    },
+    "code": {
+        "prefix": "iCode",
+        "body": [
+            "/**",
+            " * $0",
+            " * @Author: chenxin",
+            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+            " */",
+        ]
+    },
 }
