@@ -202,6 +202,33 @@
             "}"
         ]
     },
+    "class fgui": {
+        "prefix": "iClassFgui",
+        "body": [
+            "/**",
+            " * $1",
+            " * @Author: chenxin",
+            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+            " */",
+            "export class $TM_FILENAME_BASE extends FUIBase<UI_$TM_FILENAME_BASE> {",
+            "    constructor() {",
+            "        super();",
+            "        this.drawCallOptimize = true;",
+            "        ${2:$TM_FILENAME_BASE}Binder.bindAll();",
+            "    }",
+            "",
+            "    onAwake(): void {",
+            "        let ui: UI_$TM_FILENAME_BASE = this.ui;",
+            "        ui.makeFullScreen();",
+            "        ${0}",
+            "    }",
+            "",
+            "    private onClickClose(): void {",
+            "        this.close(true, enumWindowAniType.Scale);",
+            "    }",
+            "}"
+        ]
+    },
     "export default class extends": {
         "prefix": "iClassExportDefaultExtends",
         "body": [
@@ -1027,4 +1054,12 @@
         "prefix": "iSocketOff",
         "body": "GameSocketManager.ins.off(EventName${0}, this, this.${1});"
     },
+    "setPropitem": {
+        "prefix": "iSetPropitem",
+        "body": [
+            "let param = { key: ${1} };",
+            "let gener = ItemUtils.getItemData(param).gener;",
+            "${2:item}.setData(0, gener.getCfgId(param), \"\", \"\", gener.getIcon(param), gener.getQuality(param));"
+        ]
+    }
 }
