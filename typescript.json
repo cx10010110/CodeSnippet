@@ -26,11 +26,11 @@
     },
     "log console3": {
         "prefix": "iConsole3",
-        "body": "console.log(\"--------- ${0} ---------\");",
+        "body": "console.log(\"---- ${0} ----\");",
     },
     "log console32": {
         "prefix": "iConsole32",
-        "body": "console.log(`--------- ${${0}} ---------`);",
+        "body": "console.log(`---- ${${0}} ----`);",
     },
     "log warn1": {
         "prefix": "iWarn1",
@@ -46,11 +46,11 @@
     },
     "log warn3": {
         "prefix": "iWarn3",
-        "body": "console.warn(\"--------- ${0} ---------\");",
+        "body": "console.warn(\"---- ${0} ----\");",
     },
     "log warn32": {
         "prefix": "iWarn32",
-        "body": "console.warn(`--------- ${${0}} ---------`);",
+        "body": "console.warn(`---- ${${0}} ----`);",
     },
     "log error1": {
         "prefix": "iError1",
@@ -66,23 +66,48 @@
     },
     "log error3": {
         "prefix": "iError3",
-        "body": "console.error(\"--------- ${0} ---------\");",
+        "body": "console.error(\"---- ${0} ----\");",
     },
     "log error32": {
         "prefix": "iError32",
-        "body": "console.error(`--------- ${${0}} ---------`);",
+        "body": "console.error(`---- ${${0}} ----`);",
     },
     "class": {
         "prefix": "iClass",
         "body": [
             "/**",
-            " * $0",
+            " * $1",
             " * @Author: chenxin",
             " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
             " */",
             "class $TM_FILENAME_BASE {",
-            "    constructor() {",
-            "    }",
+            "    ${0}",
+            "}"
+        ]
+    },
+    "class implements": {
+        "prefix": "iClassImplements",
+        "body": [
+            "/**",
+            " * $1",
+            " * @Author: chenxin",
+            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+            " */",
+            "class $TM_FILENAME_BASE implements ${0} {",
+            "    ",
+            "}"
+        ]
+    },
+    "export class implements": {
+        "prefix": "iClassImplementsExport",
+        "body": [
+            "/**",
+            " * $1",
+            " * @Author: chenxin",
+            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+            " */",
+            "export class $TM_FILENAME_BASE implements ${0} {",
+            "    ",
             "}"
         ]
     },
@@ -99,35 +124,6 @@
             "}"
         ]
     },
-    "class extends": {
-        "prefix": "iClassExtends",
-        "body": [
-            "/**",
-            " * $0",
-            " * @Author: chenxin",
-            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
-            " */",
-            "class $TM_FILENAME_BASE extends ${1} {",
-            "    constructor() {",
-            "        super();",
-            "    }",
-            "}"
-        ]
-    },
-    "export class": {
-        "prefix": "iClassExport",
-        "body": [
-            "/**",
-            " * $0",
-            " * @Author: chenxin",
-            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
-            " */",
-            "export class $TM_FILENAME_BASE {",
-            "    constructor() {",
-            "    }",
-            "}"
-        ]
-    },
     "export interface": {
         "prefix": "iInterfaceExport",
         "body": [
@@ -138,20 +134,6 @@
             " */",
             "export interface $TM_FILENAME_BASE {",
             "    ${0}",
-            "}"
-        ]
-    },
-    "export default class": {
-        "prefix": "iClassExportDefault",
-        "body": [
-            "/**",
-            " * $0",
-            " * @Author: chenxin",
-            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
-            " */",
-            "export default class $TM_FILENAME_BASE {",
-            "    constructor() {",
-            "    }",
             "}"
         ]
     },
@@ -168,18 +150,55 @@
             "}"
         ]
     },
+    "class extends": {
+        "prefix": "iClassExtends",
+        "body": [
+            "/**",
+            " * $1",
+            " * @Author: chenxin",
+            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+            " */",
+            "class $TM_FILENAME_BASE extends ${0} {",
+            "    ",
+            "}"
+        ]
+    },
+    "export class": {
+        "prefix": "iClassExport",
+        "body": [
+            "/**",
+            " * $1",
+            " * @Author: chenxin",
+            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+            " */",
+            "export class $TM_FILENAME_BASE {",
+            "    ${0}",
+            "}"
+        ]
+    },
+    "export default class": {
+        "prefix": "iClassExportDefault",
+        "body": [
+            "/**",
+            " * $1",
+            " * @Author: chenxin",
+            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+            " */",
+            "export default class $TM_FILENAME_BASE {",
+            "    ${0}",
+            "}"
+        ]
+    },
     "export class extends": {
         "prefix": "iClassExportExtends",
         "body": [
             "/**",
-            " * $0",
+            " * $1",
             " * @Author: chenxin",
             " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
             " */",
-            "export class $TM_FILENAME_BASE extends ${1} {",
-            "    constructor() {",
-            "        super();",
-            "    }",
+            "export class $TM_FILENAME_BASE extends ${0} {",
+            "    ",
             "}"
         ]
     },
@@ -192,9 +211,7 @@
             " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
             " */",
             "export default class $TM_FILENAME_BASE extends ${0} {",
-            "    constructor() {",
-            "        super();",
-            "    }",
+            "    ",
             "}"
         ]
     },
@@ -207,7 +224,10 @@
             " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
             " */",
             "class $TM_FILENAME_BASE {",
+            "    private constructor() { }",
+            "",
             "    private static _ins: $TM_FILENAME_BASE = null;",
+            "",
             "    public static get ins(): $TM_FILENAME_BASE {",
             "        if (!this._ins) this._ins = new $TM_FILENAME_BASE();",
             "        return this._ins;",
@@ -219,27 +239,11 @@
         "prefix": "iSingleton2",
         "body": [
             "private static _ins: ${0} = null;",
+            "",
             "public static get ins(): ${0} {",
             "    if (!this._ins) this._ins = new ${0}();",
             "    return this._ins;",
             "}",
-        ]
-    },
-    "class singleton extends": {
-        "prefix": "iSingletonExtends",
-        "body": [
-            "/**",
-            " * $0",
-            " * @Author: chenxin",
-            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
-            " */",
-            "class $TM_FILENAME_BASE extends ${1} {",
-            "    private static _ins: $TM_FILENAME_BASE = null;",
-            "    public static get ins(): $TM_FILENAME_BASE {",
-            "        if (!this._ins) this._ins = new $TM_FILENAME_BASE();",
-            "        return this._ins;",
-            "    }",
-            "}"
         ]
     },
     "export class singleton": {
@@ -251,7 +255,10 @@
             " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
             " */",
             "export class $TM_FILENAME_BASE {",
+            "    private constructor() { }",
+            "",
             "    private static _ins: $TM_FILENAME_BASE = null;",
+            "",
             "    public static get ins(): $TM_FILENAME_BASE {",
             "        if (!this._ins) this._ins = new $TM_FILENAME_BASE();",
             "        return this._ins;",
@@ -268,41 +275,10 @@
             " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
             " */",
             "export default class $TM_FILENAME_BASE {",
+            "    private constructor() { }",
+            "",
             "    private static _ins: $TM_FILENAME_BASE = null;",
-            "    public static get ins(): $TM_FILENAME_BASE {",
-            "        if (!this._ins) this._ins = new $TM_FILENAME_BASE();",
-            "        return this._ins;",
-            "    }",
-            "}"
-        ]
-    },
-    "export class singleton extends": {
-        "prefix": "iSingletonExportExtends",
-        "body": [
-            "/**",
-            " * $0",
-            " * @Author: chenxin",
-            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
-            " */",
-            "export class $TM_FILENAME_BASE extends ${1} {",
-            "    private static _ins: $TM_FILENAME_BASE = null;",
-            "    public static get ins(): $TM_FILENAME_BASE {",
-            "        if (!this._ins) this._ins = new $TM_FILENAME_BASE();",
-            "        return this._ins;",
-            "    }",
-            "}"
-        ]
-    },
-    "export class default singleton extends": {
-        "prefix": "iSingletonExportDefaultExtends",
-        "body": [
-            "/**",
-            " * $0",
-            " * @Author: chenxin",
-            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
-            " */",
-            "export default class $TM_FILENAME_BASE extends ${1} {",
-            "    private static _ins: $TM_FILENAME_BASE = null;",
+            "",
             "    public static get ins(): $TM_FILENAME_BASE {",
             "        if (!this._ins) this._ins = new $TM_FILENAME_BASE();",
             "        return this._ins;",
@@ -314,6 +290,20 @@
         "prefix": "iCommentFunction",
         "body": [
             "/** ${0} */",
+        ]
+    },
+    "comment function1": {
+        "prefix": "iCommentFunction1",
+        "body": [
+            "// ${0}",
+        ]
+    },
+    "comment class": {
+        "prefix": "iCommentClass",
+        "body": [
+            "/**",
+            " * ${0}",
+            " */",
         ]
     },
     "animation": {
@@ -378,11 +368,11 @@
     },
     "tweenClear": {
         "prefix": "iTweenClear",
-        "body": "Laya.Tween.Clear(${0});"
+        "body": "Laya.Tween.clear(${0});"
     },
     "tweenClearAll": {
         "prefix": "iTweenClearAll",
-        "body": "Laya.Tween.ClearAll(${0});"
+        "body": "Laya.Tween.clearAll(${0});"
     },
     "timer1": {
         "prefix": "iTimer1",
@@ -410,11 +400,11 @@
     },
     "stageWidth": {
         "prefix": "iStageWidth",
-        "body": "Laya.Stage.Width${0}"
+        "body": "Laya.stage.width${0}"
     },
     "stageHeight": {
         "prefix": "iStageHeight",
-        "body": "Laya.Stage.Height${0}"
+        "body": "Laya.stage.height${0}"
     },
     "loader": {
         "prefix": "iLoader",
@@ -439,50 +429,6 @@
     "nameEvent": {
         "prefix": "iNameEvent",
         "body": "${1} = \"${1}\",${0}"
-    },
-    "class implements": {
-        "prefix": "iClassImplements",
-        "body": [
-            "/**",
-            " * $1",
-            " * @Author: chenxin",
-            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
-            " */",
-            "class ${2} implements ${0} {",
-            "    constructor() {",
-            "        super();",
-            "    }",
-            "}"
-        ]
-    },
-    "export class implements": {
-        "prefix": "iClassExportImplements",
-        "body": [
-            "/**",
-            " * $1",
-            " * @Author: chenxin",
-            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
-            " */",
-            "exoprt class ${2} implements ${0} {",
-            "    constructor() {",
-            "        super();",
-            "    }",
-            "}"
-        ]
-    },
-    "comment function1": {
-        "prefix": "iCommentFunction1",
-        "body": [
-            "// ${0}",
-        ]
-    },
-    "comment class": {
-        "prefix": "iCommentClass",
-        "body": [
-            "/**",
-            " * ${0}",
-            " */",
-        ]
     },
     "get private": {
         "prefix": "iGetPrivate",
@@ -533,12 +479,13 @@
         "prefix": "iGetSetPrivate",
         "body": [
             "private _${1}: ${0};",
+            "",
             "private get ${1}(): ${0} {",
             "    return this._${1};",
             "}",
             "",
-            "private set ${1}(val: ${0}) {",
-            "    this._${1} = val;",
+            "private set ${1}(value: ${0}) {",
+            "    this._${1} = value;",
             "}"
         ]
     },
@@ -546,12 +493,13 @@
         "prefix": "iGetSetProtected",
         "body": [
             "private _${1}: ${0};",
+            "",
             "protected get ${1}(): ${0} {",
             "    return this._${1};",
             "}",
             "",
-            "protected set ${1}(val: ${0}) {",
-            "    this._${1} = val;",
+            "protected set ${1}(value: ${0}) {",
+            "    this._${1} = value;",
             "}"
         ]
     },
@@ -559,12 +507,13 @@
         "prefix": "iGetSetPublic",
         "body": [
             "private _${1}: ${0};",
+            "",
             "public get ${1}(): ${0} {",
             "    return this._${1};",
             "}",
             "",
-            "public set ${1}(val: ${0}) {",
-            "    this._${1} = val;",
+            "public set ${1}(value: ${0}) {",
+            "    this._${1} = value;",
             "}"
         ]
     },
@@ -633,7 +582,7 @@
         ]
     },
     "function static async private": {
-        "prefix": "iFunctionAsyncPrivate",
+        "prefix": "iFunctionAsyncStaticPrivate",
         "body": [
             "private static async ${1}($2): Promise<${3:void}> {",
             "    ${0}",
@@ -649,7 +598,7 @@
         ]
     },
     "function static async protected": {
-        "prefix": "iFunctionAsyncProtected",
+        "prefix": "iFunctionAsyncStaticProtected",
         "body": [
             "protected static async ${1}($2): Promise<${3:void}> {",
             "    ${0}",
@@ -665,7 +614,7 @@
         ]
     },
     "function static async public": {
-        "prefix": "iFunctionAsyncPublic",
+        "prefix": "iFunctionAsyncStaticPublic",
         "body": [
             "public static async ${1}($2): Promise<${3:void}> {",
             "    ${0}",
@@ -706,7 +655,7 @@
     },
     "timer": {
         "prefix": "iTimer",
-        "body": "Laya.timer.${0}"
+        "body": "Laya.timer${0}"
     },
     "tweenTo": {
         "prefix": "iTweenTo",
@@ -747,10 +696,6 @@
     "label": {
         "prefix": "iLabel",
         "body": "Laya.Label${0}"
-    },
-    "htmlDivElement": {
-        "prefix": "iHtmlDivElement",
-        "body": "Laya.HTMLDivElement${0}"
     },
     "sprite3D": {
         "prefix": "iSprite3D",
@@ -886,13 +831,11 @@
             "}"
         ]
     },
-    "interface export": {
-        "prefix": "iInterfaceExport",
+    "enum export1": {
+        "prefix": "iEnumExport1",
         "body": [
-            "/**",
-            " * ${1}",
-            " */",
-            "export interface ${2} {",
+            "/** ${1} */",
+            "export const enum ${2} {",
             "    ${0}",
             "}"
         ]
@@ -925,6 +868,14 @@
         "prefix": "iBaseCamera",
         "body": "Laya.BaseCamera{0}"
     },
+    "directional light": {
+        "prefix": "iDirectionLight",
+        "body": "Laya.DirectionLight${0}"
+    },
+    "shadowMode": {
+        "prefix": "iShadowMode",
+        "body": "Laya.ShadowMode${0}"
+    },
     "code": {
         "prefix": "iCode",
         "body": [
@@ -934,5 +885,146 @@
             " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
             " */",
         ]
+    },
+    "table": {
+        "prefix": "iTable",
+        "body": [
+            "import { Dictionary } from \"../utils/Dictionary\";",
+            "import { tbl } from \"./tblMax\";",
+            "",
+            "/**",
+            " * ${1}",
+            " * @Author: chenxin",
+            " * @Date: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+            " */",
+            "export class $TM_FILENAME_BASE extends tbl.${0} {",
+            "    public static DIC: Dictionary;",
+            "",
+            "    public init(obj: Array<any>, dic: Dictionary): void {",
+            "        super.init(obj);",
+            "        dic.set(this.id, this);",
+            "        $TM_FILENAME_BASE.DIC = dic;",
+            "    }",
+            "",
+            "    public static getCfg(id: number): $TM_FILENAME_BASE {",
+            "        if (!$TM_FILENAME_BASE.DIC) return null;",
+            "        return $TM_FILENAME_BASE.DIC.get(id);",
+            "    }",
+            "}"
+        ]
+    },
+    "cx test": {
+        "prefix": "iCxTest",
+        "body": [
+            "/** cx test */${0}"
+        ]
+    },
+    "cx todo": {
+        "prefix": "iCxTodo",
+        "body": [
+            "/** cx todo */${0}"
+        ]
+    },
+    "script": {
+        "prefix": "iScript",
+        "body": [
+            "Laya.Script${0}"
+        ]
+    },
+    "keyboard": {
+        "prefix": "iKeyboard",
+        "body": "Laya.Keyboard${0}"
+    },
+    "skeleton": {
+        "prefix": "iLayaSkeleton",
+        "body": "Laya.Skeleton${0}"
+    },
+    "templete": {
+        "prefix": "iTemplet",
+        "body": "Laya.Templet${0}"
+    },
+    "boneSlot": {
+        "prefix": "iBoneSlot",
+        "body": "Laya.BoneSlot${0}"
+    },
+    "for1": {
+        "prefix": "iFor1",
+        "body": [
+            "for (let ${1}: number = 0, len = ${2}.length; ${1} < len; ++${1}) {",
+            "    ${0}",
+            "}"
+        ]
+    },
+    "forIn": {
+        "prefix": "iForIn",
+        "body": [
+            "for (let ${1} in ${2}) {",
+            "    ${0}",
+            "}"
+        ]
+    },
+    "for2": {
+        "prefix": "iFor2",
+        "body": [
+            "for (let ${1}: number = 0; ${1} < ${2}.length; ++${1}) {",
+            "    ${0}",
+            "}"
+        ]
+    },
+    "dic": {
+        "prefix": "iDic",
+        "body": "{ [${1}: ${2}]: ${0} }"
+    },
+    "itemRender": {
+        "prefix": "iItemRender",
+        "body": "${1:list}.itemRenderer = Laya.Handler.create(this, this.${0:renderItem}, null, false);"
+    },
+    "itemProvider": {
+        "prefix": "iItemProvider",
+        "body": "${1:list}.itemProvider = Laya.Handler.create(this, this.${0:itemProvider}, null, false);"
+    },
+    "renderItem": {
+        "prefix": "iRenderItem",
+        "body": [
+            "private ${1:renderItem}(index: number, item: ${2:fgui.GObject}): void {",
+            "    ${0}",
+            "}"
+        ]
+    },
+    "provierItem": {
+        "prefix": "iProviderItem",
+        "body": [
+            "private ${1:itemProvider}(index: number): string {",
+            "    ${0}",
+            "}"
+        ]
+    },
+    "EEvent": {
+        "prefix": "iEEvent",
+        "body": "E.ins.event(EventName.${0});"
+    },
+    "EOn": {
+        "prefix": "iEOn",
+        "body": "E.ins.on(EventName${0}, this, this.${1});"
+    },
+    "EOnce": {
+        "prefix": "iEOnce",
+        "body": "E.ins.once(EventName${0}, this, this.${1});"
+    },
+    "EOff": {
+        "prefix": "iEOff",
+        "body": "E.ins.off(EventName${0}, this, this.${1});"
+    },
+    "socketOn": {
+        "prefix": "iSocketOn",
+        "body": "GameSocketManager.ins.on(EventName${0}, this, this.${1});"
+    },
+    "socketOnce": {
+        "prefix": "iSocketOnce",
+        "body": "GameSocketManager.ins.once(EventName${0}, this, this.${1});"
+    },
+    "socketOff": {
+        "prefix": "iSocketOff",
+        "body": "GameSocketManager.ins.off(EventName${0}, this, this.${1});"
     },
 }
