@@ -421,6 +421,14 @@
         "prefix": "iTimerFrameOnce",
         "body": "Laya.timer.frameOnce(${0});"
     },
+    "timerClear": {
+        "prefix": "iTimerClear",
+        "body": "Laya.timer.clear(this, this.${0});"
+    },
+    "timerClearAll": {
+        "prefix": "iTimerClearAll",
+        "body": "Laya.timer.clearAll(this);${0}"
+    },
     "new handler": {
         "prefix": "iNewHandler",
         "body": "new Laya.handler(${0})"
@@ -1061,5 +1069,9 @@
             "let gener = ItemUtils.getItemData(param).gener;",
             "${2:item}.setData(0, gener.getCfgId(param), \"\", \"\", gener.getIcon(param), gener.getQuality(param));"
         ]
+    },
+    "onClick": {
+        "prefix": "iOnClick",
+        "body": "${1}.onClick(this, this.${0});"
     }
 }
